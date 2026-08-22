@@ -14,7 +14,7 @@ class Solution {
                 {
                     return sum;
                 }
-                else if(Math.abs(sum-target)<Math.abs(closest-target))
+                 if(Math.abs(sum-target)<Math.abs(closest-target))
                 {
                     closest=sum;
                 }
