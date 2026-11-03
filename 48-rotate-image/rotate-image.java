@@ -21,3 +21,4 @@ class Solution {
         
     }
 }
+//the logic => The Reverse of each column should be converted to a Row i.e,Reverse of first column is 7,4,1 which should be converted into a Row
