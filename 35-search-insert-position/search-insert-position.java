@@ -1,44 +1,25 @@
 class Solution {
     public int searchInsert(int[] nums, int target) {
-        int len=nums.length;
-        boolean found=false;
-        int index=0;
-        for(int i=0;i<len;i++)
+        int low=0;
+        int high=nums.length-1;
+        while(low<=high)
         {
-            if(nums[i]==target)
+            int mid=(low+high)/2;
+            if(nums[mid]==target)
             {
-                index=i;
-                found=true;
-                break;
+                return mid;
             }
-        }
-        if(found==true)
-        {
-            return index;
-        }
-        if(found==false)
-        {
-        if(target>nums[len-1])
-        {
-            return len;
-        }
-        int[]arr=new int[len+1];
-        int num=0;
-        for(int i=0;i<len;i++)
-        {
-             num=nums[i];
-             arr[i]=num;
-        }
-        arr[len]=target;
-        Arrays.sort(arr);
-        for(int i=0;i<len+1;i++)
-        {
-            if(arr[i]==target)
+             else if(nums[mid]<target)
             {
-                return i;
+                low=mid+1;
             }
+            else if(nums[mid]>target)
+            {
+                high=mid-1;
+            }
+
         }
-        }
-        return 0;
+        return low;
+        
     }
 }
